@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import testData from './testData';
 import SearchBarComponent from './components/SearchBarComponent';
 import PostContainer from './components/PostContainer';
@@ -19,8 +19,7 @@ class App extends Component {
          </header>
          <div>
             <PostContainer data={this.state.data}/>
-
-        </div>
+          </div>
       </div>
     );
   }

@@ -4,10 +4,11 @@ const Image = props => {
 
   return (
     <div>
-      <p><img src={props.img}/> {props.user}</p>
-      <img src={props.post}/>
+      <p><img src={props.img} alt='User post'/> {props.user}</p>
+      <img src={props.post} alt='Source img'/>
     </div>
   )
 }
+
 
 export default Image;
