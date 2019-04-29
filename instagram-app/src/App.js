@@ -1,13 +1,22 @@
-import React from 'react';
-
+import React, { Component } from 'react';
 import './App.css';
+import testData from './testData'
+import TestComponent from './components/testComponent'
 
-function App() {
-  return (
-    <div className="App">
-      <h1>HI</h1>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = { data: testData
+    };
+
+  }
+  render() {
+    return (
+      <div className="App">
+        <TestComponent data={this.state.data}/>
+      </div>
+    );
+  }
 }
 
 export default App;
