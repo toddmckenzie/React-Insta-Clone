@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import testData from './testData'
-import TestComponent from './components/testComponent'
+import testData from './testData';
+import SearchBarComponent from './components/SearchBarComponent';
+import PostContainer from './components/PostContainer';
 
 class App extends Component {
   constructor() {
@@ -13,7 +14,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TestComponent data={this.state.data}/>
+        <header>
+            <SearchBarComponent data={this.state.data} />
+         </header>
+         <div>
+            <PostContainer data={this.state.data}/>
+
+        </div>
       </div>
     );
   }
