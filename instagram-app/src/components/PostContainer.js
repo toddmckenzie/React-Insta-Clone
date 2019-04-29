@@ -7,7 +7,7 @@ const PostContainer = props => {
 
   return (
     <div>
-      {props.data.map(item => 
+      {props.data.map(item =>
         <div>
           <Image img={item.thumbnailUrl} post={item.imageUrl} user={item.username} />
           <CommentSection comments={item.comments} />
