@@ -16,9 +16,9 @@ const PostContainer = props => {
         <div className="each-container">
           <Image img={item.thumbnailUrl} post={item.imageUrl} user={item.username} key={item.timestamp} />
           <p><img src={likes} alt="likes" className='likes'/>
-          <img src={comment} alt="comment" className="comment"/></p>
-          <p>{item.likes}</p>
-          <CommentSection comments={item.comments}/>
+          <img src={comment} alt="comment" className="comment" /></p>
+          <p className="liked-by" >Liked by {item.likes} others</p>
+          <CommentSection comments={item.comments} key={index} />
         </div>
 
       )}
