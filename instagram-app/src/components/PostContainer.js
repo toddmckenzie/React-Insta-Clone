@@ -2,16 +2,22 @@ import React from 'react';
 import CommentSection from './CommentSection';
 import Image from './Image';
 import PropTypes from 'prop-types';
-import './PostContainer.scss'
+import './PostContainer.scss';
+import likes from './images/heart.png';
+import comment from './images/comment.png';
+
+
 
 const PostContainer = props => {
 
   return (
     <div>
       {props.data.map((item, index) =>
-        <div>
+        <div className="each-container">
           <Image img={item.thumbnailUrl} post={item.imageUrl} user={item.username} key={item.timestamp} />
-          <p>{item.likes}</p>
+          <p><img src={likes} alt="likes" className='likes'/>
+          <img src={comment} alt="comment" className="comment"/>
+          {item.likes}</p>
           <CommentSection comments={item.comments}/>
         </div>
 
