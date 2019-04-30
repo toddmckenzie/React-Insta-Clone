@@ -1,10 +1,12 @@
 import React from 'react';
+import './PostContainer.scss';
+
 
 const Image = props => {
 
   return (
     <div>
-      <p><img src={props.img} alt='User post'/> {props.user}</p>
+      <p><img src={props.img} className='userImg' alt='User post'/> {props.user}</p>
       <img src={props.post} alt='Source img'/>
     </div>
   )

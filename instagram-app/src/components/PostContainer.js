@@ -2,6 +2,7 @@ import React from 'react';
 import CommentSection from './CommentSection';
 import Image from './Image';
 import PropTypes from 'prop-types';
+import './PostContainer.scss'
 
 const PostContainer = props => {
 
@@ -10,6 +11,7 @@ const PostContainer = props => {
       {props.data.map((item, index) =>
         <div>
           <Image img={item.thumbnailUrl} post={item.imageUrl} user={item.username} key={item.timestamp} />
+          <p>{item.likes}</p>
           <CommentSection comments={item.comments}/>
         </div>
 
