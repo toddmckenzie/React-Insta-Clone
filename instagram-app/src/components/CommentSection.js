@@ -8,11 +8,11 @@ const CommentSection = (props) => {
     <div>
       {props.comments.map((comment, index) =>
         <div className="flex">
-          <p key={`${comment.username}_${index}`}>{comment.username}</p>
+          <p key={`${comment.username}_${index}`} className="user-name">{comment.username}</p>
           <p key={index}>{comment.text}</p>
         </div>
       )}
-      <input value="Add a comment..."></input>
+      <input value="Add a comment..." className="comment-here"></input>
     </div>
   )
 }

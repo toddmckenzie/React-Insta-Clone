@@ -1,23 +1,38 @@
 
 .title {
-  margin-right: 10px;
+  padding-left: 10px;
+  margin-bottom: 30px;
 }
-.userImg {
-  height: 40px;
-  border-radius: 50%;
+.individual {
+  margin-top: 10px;
+  margin-bottom: 0;
+  .image-flex {
+    padding-left: 25%;
+    display: flex;
+    .userImg {
+      height: 40px;
+      border-radius: 50%;
+      }
   }
+}
+
+
 
 
 .each-container {
-  background-color: #fafafa;
-  margin-right: 10%;
+  width: 640px;
+  border: 1px solid lightgray;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  background-color: white;
   .likes {
     height: 30px;
-    border: 1px solid red;
+
   }
   .comment {
     height: 50px;
-    border: 1px solid red;
     margin-top: -10px;
+    margin-right: 550px;
   }
 }
