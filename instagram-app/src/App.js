@@ -9,8 +9,6 @@ class App extends Component {
     this.state =  { data: [] ,
     comment: '',
     filtered: '',
-    textInput: '',
-    comments: '',
     }
   }
 
@@ -25,27 +23,30 @@ class App extends Component {
 
   filterItem = event => {
     event.preventDefault();
-    this.setState({ data: testData }) //if searched item isn't identical then the regular list stays up there.
-    this.state.data.filter((item, index) => {
-      if (this.state.filtered === item.username) {
-        this.setState({ data: [item] });
-      }
-  })
+    if(this.state.filtered === '') {
+      this.setState({ data: testData })
+    } else {
+    const updatedData = this.state.data.filter(item => item.username === this.state.filtered)
+      this.setState({ data: updatedData })
+    }
 }
+
+
+/*
   addNewComment = event => {
    event.preventDefault();
-   console.log('hi')
-   console.log(this.state.input);
    let newComment = {
      username: 'DummyUser',
      text: this.state.textInput
    }
+
    this.setState({
-     comments: [...this.state.comments, newComment],
+     comments: [...this.state.data.comments, newComment],
      textInput: ''
    })
-  }
-
+ }
+ */
+/*
   handleChange = event => {
    this.setState({ [event.target.name]: event.target.value });
   }
@@ -53,14 +54,17 @@ class App extends Component {
   addLikes = event => { //can't get to update.
     event.preventDefault();
     let newLikes = parseInt(event.target.name);
-    let likesPlusOne = newLikes + 1;
+    let likesPlusOne = newLikes + 1
+    console.log('hi')
     console.log(this.state.likes)
+    console.log('ho')
     this.setState({ likes: likesPlusOne})
 
     //this.setState({ likes: this.state.likes })
   }
-
+*/
   render() {
+    console.log(this.state.data)
     return (
       <PostPage data={this.state.data} handleSearchChange={this.handleSearchChange}
       filterItem={this.filterItem} addNewComment={this.addNewComment}
