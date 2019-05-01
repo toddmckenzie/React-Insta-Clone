@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './PostContainer.scss';
 import LikesComponent from './LikesComponent';
 
-
+/*
 const PostContainer = props => {
   return (
     <div>
@@ -19,11 +19,30 @@ const PostContainer = props => {
     </div>
   )
 }
+*/
+
+const PostContainer = props => {
+
+  return (
+    <>
+     {props.data.map((item, index) =>
+       <div className="each-container">
+         <Image img={item.thumbnailUrl} post={item.imageUrl} user={item.username} key={item.timestamp} />
+         <LikesComponent likes={item.likes} />
+         <CommentSection comments={item.comments}
+         key={index}
+         handleChange={props.handleChange}
+         addNewComment={props.addNewComment}
+         textInput={props.textInput}
+         />
+        </div>
+      )}
+    </>
+  )
+}
 
 
-
-
-
+/*
 
 PostContainer.propTypes = {
   data: PropTypes.arrayOf(
@@ -38,7 +57,7 @@ PostContainer.propTypes = {
     })
   )
 }
-
+*/
 
 
 export default PostContainer;

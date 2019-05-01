@@ -1,16 +1,16 @@
 import React from 'react';
 import './commentSection.scss';
 import Comments from './Comments';
-
+/*
 class CommentSection extends React.Component {
  constructor(props){
    super(props);
-
    this.state = {
      comments: props.comments,
      textInput: ''
    }
  }
+
 
 
 addNewComment = event => {
@@ -21,7 +21,7 @@ addNewComment = event => {
  }
  this.setState({
    comments: [...this.state.comments, newComment],
-   textInput: ""
+   textInput: ''
  })
 }
 
@@ -39,7 +39,7 @@ handleChange = event => {
        <form onSubmit={this.addNewComment}>
          <input required
            type='text'
-           name="textInput"
+           name='textInput'
            placeholder='Add a comment...'
            className='comment-here'
            onChange={this.handleChange}
@@ -51,7 +51,26 @@ handleChange = event => {
  }
 }
 
+*/
+const CommentSection = props => {
 
-
+  return (
+      <div>
+        {props.comments.map((comment) => (
+          <Comments comment={comment} key={comment.text}/>
+        ))}
+        <form onSubmit={props.addNewComment}>
+          <input required
+            type='text'
+            name='textInput'
+            placeholder='Add a comment...'
+            className='comment-here'
+            onChange={props.handleChange}
+            value={props.textInput}>
+          </input>
+        </form>
+      </div>
+  )
+}
 
 export default CommentSection;
