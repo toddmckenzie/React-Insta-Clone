@@ -4,7 +4,6 @@ import Comments from './Comments';
 
 class CommentSection extends React.Component {
  constructor(props){
-   console.log(props.comments);
    super(props);
 
    this.state = {
@@ -16,7 +15,7 @@ class CommentSection extends React.Component {
 
 addNewComment = event => {
  event.preventDefault();
- var newComment = {
+ let newComment = {
    username: 'DummyUser',
    text: this.state.textInput
  }
