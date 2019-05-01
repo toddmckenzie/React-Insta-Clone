@@ -24,8 +24,9 @@ class App extends Component {
 
   fitlerItem = event => {
     event.preventDefault();
-    this.setState({ data: testData }) //if searched item isn't identical then the regular list stays up there.  
+    this.setState({ data: testData }) //if searched item isn't identical then the regular list stays up there.
     this.state.data.filter((item, index) => {
+      console.log(item.likes)
       if (this.state.filtered === item.username) {
         this.setState({ data: [item] })
       }
