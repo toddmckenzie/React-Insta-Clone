@@ -24,8 +24,8 @@ class App extends Component {
 
   fitlerItem = event => {
     event.preventDefault();
-    this.state.data.filter(item => {
-      console.log(item.username)
+    this.setState({ data: testData })
+    this.state.data.filter((item, index) => {
       if (this.state.filtered === item.username) {
         this.setState({ data: [item] })
       }
