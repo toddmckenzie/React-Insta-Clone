@@ -10,7 +10,7 @@ class App extends Component {
     comment: '',
     filtered: '',
     textInput: '',
-    comments: ''
+    comments: '',
     }
   }
 
@@ -34,6 +34,8 @@ class App extends Component {
 }
   addNewComment = event => {
    event.preventDefault();
+   console.log('hi')
+   console.log(this.state.input);
    let newComment = {
      username: 'DummyUser',
      text: this.state.textInput
@@ -47,10 +49,15 @@ class App extends Component {
   handleChange = event => {
    this.setState({ [event.target.name]: event.target.value });
   }
-  addLikes = event => {
+
+  addLikes = event => { //can't get to update.
     event.preventDefault();
-    let newLikes = this.state.likes + 1;
-    this.setState({ likes: newLikes })
+    let newLikes = parseInt(event.target.name);
+    let likesPlusOne = newLikes + 1;
+    console.log(this.state.likes)
+    this.setState({ likes: likesPlusOne})
+
+    //this.setState({ likes: this.state.likes })
   }
 
   render() {

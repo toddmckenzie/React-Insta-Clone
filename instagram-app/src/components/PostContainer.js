@@ -28,7 +28,7 @@ const PostContainer = props => {
      {props.data.map((item, index) =>
        <div className="each-container">
          <Image img={item.thumbnailUrl} post={item.imageUrl} user={item.username} key={item.timestamp} />
-         <LikesComponent likes={item.likes} />
+         <LikesComponent likes={item.likes} addLikes={props.addLikes}/>
          <CommentSection comments={item.comments}
          key={index}
          handleChange={props.handleChange}

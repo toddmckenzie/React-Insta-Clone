@@ -13,6 +13,7 @@ const PostPage = props => {
           <PostContainer data={props.data} handleChange={props.handleChange}
           addNewComment={props.addNewComment}
           textInput={props.textInput}
+          addLikes={props.addLikes}
           />
         </div>
     </div>
