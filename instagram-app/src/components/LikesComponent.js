@@ -18,16 +18,15 @@ addLikes = event => {
   this.setState({ likes: newLikes })
 }
 
-
-    render() {
-      return (
-        <div>
-          <p>
-          <img src={likes} alt="likes" className='likes' onClick={this.addLikes} />
-          <img src={comment} alt="comment" className="comment" />
-          </p>
-          <p className="liked-by">Liked by {this.state.likes} others</p>
-        </div>
+  render() {
+    return (
+      <div>
+        <p>
+        <img src={likes} alt="likes" className='likes' onClick={this.addLikes} />
+        <img src={comment} alt="comment" className="comment" />
+        </p>
+        <p className="liked-by">Liked by {this.state.likes} others</p>
+      </div>
       )
   }
 

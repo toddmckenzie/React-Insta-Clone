@@ -13,7 +13,7 @@ const EachContainer = styled.div`
   margin: 0 auto;
   margin-bottom: 50px;
   margin-top: 30px;
-  background-color: blue;
+  background-color: white;
 `
 
 const PostContainer = props => {

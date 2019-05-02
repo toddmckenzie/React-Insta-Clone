@@ -8,7 +8,7 @@ import './SearchBarComponent.scss';
 import styled from 'styled-components';
 
 const HeaderFlexs = styled.div`
-  padding-left: 10%;
+  padding-left: 15%;
   padding-right: 10%;
   max-width: 1300px;
   margin: 0 auto;
