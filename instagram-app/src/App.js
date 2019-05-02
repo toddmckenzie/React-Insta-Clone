@@ -1,7 +1,7 @@
 import React from 'react';
 import PostPage from './components/PostPage'
 import withAuthenticate from './authentication/withAuthenticate';
-import Login from './components/Login/Login';
+import Login from './components/Logins/Login';
 /*
 class App extends Component {
   constructor() {
@@ -43,8 +43,8 @@ class App extends Component {
   }
 }
 */
-
-const ComponentFromWithAuthenticate = withAuthenticate(PostPage);
+                                                                
+const ComponentFromWithAuthenticate = withAuthenticate(PostPage)(Login);
 
 const App = () => {
   return (
