@@ -15,11 +15,11 @@ class Login extends React.Component {
     if (localStorage.getItem('user')) {
         localStorage.removeItem('user');
         this.setState({ loggedIn: false });
-        console.log(this.state.loggedIn);
+        window.location.reload();
       } else {
         localStorage.setItem('user', this.state.username );
         this.setState({ loggedIn: true });
-        console.log(this.state.loggedIn);
+        window.location.reload();
       }
     };
 
@@ -36,7 +36,9 @@ class Login extends React.Component {
     return (
       <div>
         <form onSubmit={this.logIn}>
-            <input name='username'
+            <input
+            required
+            name='username'
             type='text'
             placeholder='Username'
             onChange={this.handleUser}
@@ -49,7 +51,7 @@ class Login extends React.Component {
             value={this.state.password}
             >
             </input>
-            <button onSubmit={this.logIn}>LogIN</button>
+            <button onSubmit={this.logIn}>LogIN/Logout</button>
         </form>
       </div>
     )

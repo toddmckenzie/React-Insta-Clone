@@ -1,6 +1,6 @@
 import React from 'react';
 import camera from './images/camera.png';
-import comment from './images/comment.png';
+//import comment from './images/comment.png';
 import explore from './images/explore.png';
 import heart from './images/heart.png';
 import person from './images/person.png';

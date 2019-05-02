@@ -2,33 +2,33 @@ import React from 'react';
 import PostPage from '../components/PostPage';
 import Login from '../components/Logins/Login';
 
-
+//need to get state here to sync with Login page....
 const withAuthenticate = PostPage => Login =>
   class extends React.Component {
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
     this.state = {
       loggedIn: false
     }
   }
 
+//  window.location.reload();
+
   componentDidMount() {
-    if (localStorage.getItem('user')) {
-      this.setState({ loggedIn: true })
-    } else {
-      this.setState({ loggedIn: false })
-    }
+    (localStorage.getItem('user')) ?
+    this.setState({ loggedIn: true }) :
+    this.setState({ loggedIn: false })
   }
 
   render() {
+    console.log(this.state.loggedIn)
     let display;
     if(this.state.loggedIn) {
       display = <PostPage />
-    }else {
-      display = <Login />
     }
     return (
       <div>
+        <Login />
         {display}
       </div>
     )
