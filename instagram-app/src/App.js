@@ -1,6 +1,7 @@
 import React from 'react';
 import PostPage from './components/PostPage'
-import withAuthenticate from './authentication/withAuthenticate'
+import withAuthenticate from './authentication/withAuthenticate';
+import Login from './components/Login/Login';
 /*
 class App extends Component {
   constructor() {
