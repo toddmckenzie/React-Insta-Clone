@@ -12,8 +12,9 @@ const Title = styled.p`
 
 const UserImage = styled.img`
   height: 40px;
+  width: auto;
   border-radius: 50%;
-  margin-top: 10px;`
+  margin-top: 2px;`
 
 const ImageFlex = styled.div`
   padding-left: 25%;
