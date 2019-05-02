@@ -30,7 +30,8 @@ const Instas = styled.h1`
   margin-bottom: 20px;
   margin-left: 10px;
   padding-right: 50px;
-  margin-top: 25px;`
+  margin-top: 25px;
+  padding-right: 15%;`
 
 const SearchBarComponent = props => {
   return (

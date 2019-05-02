@@ -1,6 +1,13 @@
 import React from 'react';
-import './commentSection.scss';
 import Comments from './Comments';
+import styled from 'styled-components'
+
+const CommentHere = styled.input`
+  width: 616px;
+  height: 50px;
+  padding-left: 20px;
+  font-size: 16px;
+  color: gray;`
 
 class CommentSection extends React.Component {
  constructor(props){
@@ -37,14 +44,14 @@ handleChange = event => {
          <Comments comment={comment} />
        ))}
        <form onSubmit={this.addNewComment}>
-         <input required
+         <CommentHere required
            type='text'
            name='textInput'
            placeholder='Add a comment...'
            className='comment-here'
            onChange={this.handleChange}
            value={this.state.textInput}>
-         </input>
+         </CommentHere>
        </form>
      </div>
    )
