@@ -2,7 +2,7 @@ import React from 'react';
 import PostPage from '../components/PostPage';
 import Login from '../components/Logins/Login';
 
-//need to get state here to sync with Login page....
+
 const withAuthenticate = PostPage => Login =>
   class extends React.Component {
   constructor(){
@@ -12,7 +12,6 @@ const withAuthenticate = PostPage => Login =>
     }
   }
 
-//  window.location.reload();
 
   componentDidMount() {
     (localStorage.getItem('user')) ?
@@ -21,11 +20,10 @@ const withAuthenticate = PostPage => Login =>
   }
 
   render() {
-    console.log(this.state.loggedIn)
     let display;
     if(this.state.loggedIn) {
       display = <PostPage />
-    }
+    } 
     return (
       <div>
         <Login />

@@ -5,6 +5,10 @@ import explore from './images/explore.png';
 import heart from './images/heart.png';
 import person from './images/person.png';
 import './SearchBarComponent.scss';
+import styled from 'styled-components';
+
+
+
 
 const SearchBarComponent = props =>  {
 
@@ -19,7 +23,7 @@ const SearchBarComponent = props =>  {
             type="text"
             className="search"
             name="filtered"
-            placeholder="Search"
+            placeholder="🔍 Search"
             onChange={props.handleChange}
             >
             </input>
