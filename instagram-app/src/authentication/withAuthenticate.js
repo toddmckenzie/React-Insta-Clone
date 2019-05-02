@@ -1,6 +1,6 @@
 import React from 'react';
-import PostPage from '../components/PostPage';
-import Login from '../components/Logins/Login';
+//import PostPage from '../components/PostPage';
+//import Login from '../components/Logins/Login';
 
 
 const withAuthenticate = PostPage => Login =>
@@ -23,7 +23,7 @@ const withAuthenticate = PostPage => Login =>
     let display;
     if(this.state.loggedIn) {
       display = <PostPage />
-    } 
+    }
     return (
       <div>
         <Login />
