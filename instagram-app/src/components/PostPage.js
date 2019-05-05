@@ -3,13 +3,15 @@ import SearchBarComponent from './SearchBarComponent';
 import PostContainer from './PostContainer';
 import testData from './testData';
 import './App.scss';
+import PropTypes from 'prop-types';
+
 
 class PostPage extends React.Component {
   constructor() {
       super();
       this.state =  { data: [] ,
       comment: '',
-      filtered: '',
+      filtered: ''
     }
 
   }
@@ -39,13 +41,27 @@ render () {
           <SearchBarComponent data={this.state.data} handleChange={this.handleSearchChange} filterPost={this.filterItem} />
        </header>
        <div>
-          <PostContainer data={this.state.data} handleChange={this.handleChange}
+          <PostContainer  data={this.state.data} handleChange={this.handleChange}
           textInput={this.state.textInput}
           />
         </div>
     </div>
   );
 }
+}
+
+PostPage.propTypes = {
+  data: PropTypes.shape({
+    username: PropTypes.number,
+    thumbnailUrl: PropTypes.string,
+    imageUrl: PropTypes.string,
+    likes: PropTypes.number,
+    timestamp: PropTypes.string,
+    comments: PropTypes.shape({
+      username: PropTypes.string,
+      text: PropTypes.string
+    })
+  })
 }
 
 

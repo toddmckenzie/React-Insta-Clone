@@ -1,13 +1,16 @@
 import React from 'react';
 import Comments from './Comments';
-import styled from 'styled-components'
+import styled from 'styled-components';
+
 
 const CommentHere = styled.input`
-  width: 616px;
+  width: 619px;
   height: 50px;
   padding-left: 20px;
   font-size: 16px;
-  color: gray;`
+  color: gray;
+  border: none;
+  border-top: 1px solid gray;`
 
 class CommentSection extends React.Component {
  constructor(props){
@@ -22,8 +25,9 @@ class CommentSection extends React.Component {
 
 addNewComment = event => {
  event.preventDefault();
+ let user = localStorage.getItem('user');
  let newComment = {
-   username: 'DummyUser',
+   username: user,
    text: this.state.textInput
  }
  this.setState({
@@ -41,7 +45,7 @@ handleChange = event => {
    return (
      <div>
        {this.state.comments.map((comment) => (
-         <Comments comment={comment} />
+         <Comments comment={comment} key={Math.random() * 1000}/>
        ))}
        <form onSubmit={this.addNewComment}>
          <CommentHere required
@@ -57,30 +61,8 @@ handleChange = event => {
    )
  }
 }
-/*
 
 
-const CommentSection = props => {
 
-  return (
-      <div>
-        {props.comments.map((comment) => (
-          <Comments comment={comment} key={comment.text}/>
-        ))}
-        <form onSubmit={props.addNewComment}>
-          <input required
-            type='text'
-            name='textInput'
-            placeholder='Add a comment...'
-            className='comment-here'
-            onChange={props.handleChange}
-            value={props.textInput}
-            key={props.timestamp}
-            >
-          </input>
-        </form>
-      </div>
-  )
-}
-*/
+
 export default CommentSection;

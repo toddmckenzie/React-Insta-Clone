@@ -1,11 +1,11 @@
 import React from 'react';
+import './login.scss'
+
 
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log(props)
+  constructor() {
+    super();
     this.state = {
-      loggedIn: props.logProps,
       username: '',
       password: ''
     }
@@ -15,13 +15,12 @@ class Login extends React.Component {
     event.preventDefault();
     if (localStorage.getItem('user')) {
         localStorage.removeItem('user');
-        this.setState({ loggedIn: false });
+      //  this.setState({ loggedIn: false });
         window.location.reload();
       } else {
         localStorage.setItem('user', this.state.username );
-        this.setState({ loggedIn: false });
+        //this.setState({ loggedIn: true });
         window.location.reload();
-
       }
     };
 
@@ -35,28 +34,37 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log(this.state.loggedIn + ' here')
+
     let show;
-    if (this.state.loggedIn) {
-      show = <form onSubmit={this.logIn}><button>LogOut</button></form>
+    if (localStorage.getItem('user')) {
+      show = <form onSubmit={this.logIn} username={this.state.username}><button className="logout">LogOut</button></form>
     } else {
-      show = <form onSubmit={this.logIn}>
-            <input
-            name='username'
-            type='text'
-            placeholder='Username'
-            onChange={this.handleUser}
-            value={this.state.username}
-            ></input>
-            <input name='password'
-            type='text'
-            placeholder='password'
-            onChange={this.handlePass}
-            value={this.state.password}
-            >
-            </input>
-            <button onSubmit={this.logIn}>LogIN/Logout</button>
-        </form>
+      show =
+      <div className='login-page'>
+        <div className='login-container'>
+            <form onSubmit={this.logIn} className='form'>
+              <input
+              name='username'
+              type='text'
+              placeholder='Username'
+              onChange={this.handleUser}
+              value={this.state.username}
+              className='username'
+              ></input>
+              <input name='password'
+              type='text'
+              placeholder='password'
+              onChange={this.handlePass}
+              value={this.state.password}
+              className='password'
+              >
+              </input>
+              <button onSubmit={this.logIn}>Login</button>
+              <h2>Instagram Clone</h2>
+              <p>*Put any username and password to login</p>
+            </form>
+        </div>
+      </div>
     }
     return (
       <div>

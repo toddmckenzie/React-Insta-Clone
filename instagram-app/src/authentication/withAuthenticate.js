@@ -1,6 +1,4 @@
 import React from 'react';
-//import PostPage from '../components/PostPage';
-//import Login from '../components/Logins/Login';
 
 
 const withAuthenticate = PostPage => Login =>

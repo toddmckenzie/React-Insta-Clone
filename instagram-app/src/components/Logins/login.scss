@@ -1,0 +1,88 @@
+.logout {
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  margin-left: 1000px;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid gray;
+    transform: scale(1.2);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.login-page {
+  background-color: #fafafa;
+  margin: 0 auto;
+  height: 100vh;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  .login-container {
+    background-color: white;
+    height: 500px;
+    width: 400px;
+    margin-top: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+    box-shadow: 3px 4px gray;
+    .username {
+      width: 260px;
+      margin-left: 15%;
+      height: 40px;
+      margin-top: 60px;
+      border-radius: 5px;
+      font-size: 16px;
+      text-align: center;
+      background-color: #fafafa;
+      &:focus {
+        outline: none;
+      }
+    }
+    .password {
+      width: 260px;
+      margin-left: 15%;
+      height: 40px;
+      margin-top: 30px;
+      border-radius: 5px;
+      border-radius: 5px;
+      font-size: 16px;
+      text-align: center;
+      background-color: #fafafa;
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      width: 260px;
+      margin-left: 15%;
+      height: 80px;
+      margin-top: 80px;
+      border-radius: 25px;
+      font-size: 20px;
+      text-align: center;
+      background-color: #fafafa;
+      &:focus {
+        outline: none;
+      }
+      &:hover {
+        background-color: black;
+        color: white;
+        transform: scale(1.1);
+        font-size: 24px;
+      }
+    }
+    h2 {
+      text-align: center;
+      margin-top: 80px;
+    }
+    p{
+      text-align: center;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import './commentSection.scss';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Flexed = styled.div`
   display: flex;
@@ -21,6 +22,13 @@ const Comments = props => {
       <p key={props.index}>{props.comment.text}</p>
     </Flexed>
   )
+}
+
+Comments.propTypes = {
+  comment: PropTypes.shape({
+    username: PropTypes.string,
+    text: PropTypes.string
+  })
 }
 
 export default Comments;
