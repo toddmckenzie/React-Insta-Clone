@@ -1,0 +1,31 @@
+
+.camera {
+      margin-top: 30px;
+      height: 30px;
+      width: auto;
+      padding-right: 10px;
+    }
+.search {
+      height: 20px;
+      width: 190px;
+      color: gray;
+      text-align: center;
+      margin-top: 40px;
+      margin-left: 15%;
+      margin-right: 22%;
+      background-color: #fafafa;
+      &:focus {
+        outline: none;
+      }
+    }
+
+img {
+      height: 30px;
+      width: 30px;
+      margin-top: 35px;
+      margin-right: 20px;
+    }
+
+.images-icons {
+  margin-left: 15%;
+}
